@@ -33,8 +33,8 @@ Watch the full walkthrough including model training and web deployment:
 │   ├── index.html            # Input form page
 │   └── result.html           # Prediction result page
 ├── venv/                     # Virtual environment (excluded in .gitignore)
-├── app.py                    # Flask application
-└── README.md                 # Project documentation
+├── README.md                 # Project documentation
+└── app.py                    # Flask application
 
 </pre>
 
