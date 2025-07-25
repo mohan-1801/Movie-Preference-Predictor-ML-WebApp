@@ -1,0 +1,152 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle, #ffffff22 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: drift 120s linear infinite;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+@keyframes drift {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.card, .result-box {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 40px;
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: slideUpFade 1s ease;
+}
+
+.card h2, .result-box h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 14px 0 6px;
+    color: #eeeeee;
+    font-size: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #ffffffcc;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+input[type="text"]:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px #4a90e2;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    transform: scale(1.02);
+}
+
+/* Animation */
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.result-box p {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #fff;
+}
+
+.result-box a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.result-box a:hover {
+    background-color: #1c5fc1;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 500px) {
+    .card, .result-box {
+        padding: 25px;
+    }
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}

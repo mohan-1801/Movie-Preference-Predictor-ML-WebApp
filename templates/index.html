@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Interest Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <h2>Enter Features for Two Users</h2>
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="text" name="feature1" required>
+            
+            <label>Gender (1 = Male, 0 = Female):</label>
+            <input type="text" name="feature2" required>
+
+            <label>Age:</label>
+            <input type="text" name="feature3" required>
+            
+            <label>Gender (1 = Male, 0 = Female):</label>
+            <input type="text" name="feature4" required>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

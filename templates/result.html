@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+    <div class="result-box">
+        <h2>Predicted Movie Interests</h2>
+        <p>User 1: {{ prediction[0] }}</p>
+        <p>User 2: {{ prediction[1] }}</p>
+        <a href="/">Try Again</a>
+    </div>
+
+
+</body>
+</html>
